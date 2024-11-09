@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import { link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import TimTest from './TimTest';  
 
 function App() {
   return (
@@ -19,9 +20,23 @@ function App() {
           Learn React
         </a>
 
-        <link to={"./TimTest"}>
-                    <li>TimTest</li>
-        </link>
+{/* IGNORE THIS FOR NOW */}
+        <Router>
+      <div>
+        <nav>
+          <ul>
+
+            <li><Link to="/timtest">Tim Test</Link></li> 
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/timtest" element={<TimTest />} />  
+        </Routes>
+      </div>
+    </Router>
+
+
       </header>
     </div>
   );
